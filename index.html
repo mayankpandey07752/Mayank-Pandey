@@ -1,163 +1,313 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mayank Pandey - Profile</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mayank Pandey — Monitoring & Evaluation Professional</title>
+  <meta name="description" content="Mayank Pandey — Monitoring & Evaluation professional. Experienced in program MIS, government liaison, data analysis, and capacity building."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#16a34a;
+      --glass: rgba(255,255,255,0.04);
+      --white: #e6eef6;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
     }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
+    [data-theme="light"]{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --muted:#475569;
+      --accent:#059669;
+      --glass: rgba(2,6,23,0.04);
+      --white:#0b1220;
+      --shadow: 0 8px 24px rgba(11,18,32,0.08);
     }
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #4CAF50;
-      color: white;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      z-index: 1000;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(22,163,74,0.06), transparent 8%),
+                  linear-gradient(180deg, var(--bg) 0%, rgba(0,0,0,0.02) 100%);
+      color:var(--white);
+      margin:0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transition: background .4s ease, color .4s ease;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+
+    /* Top bar */
+    .topbar{
+      position:fixed;left:0;right:0;top:0;height:72px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 28px;backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      z-index:1000;
+      box-shadow:var(--shadow);
     }
-    nav a:hover {
-      text-decoration: underline;
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#059669);
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:18px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.5);
     }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 80px 20px 40px;
-      text-align: center;
+    .brand h1{font-size:16px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--white);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;opacity:.9}
+    nav a:hover{background:var(--glass)}
+    .actions{display:flex;gap:10px;align-items:center}
+
+    /* Hero */
+    .hero{
+      max-width:1100px;margin:110px auto 30px;padding:40px;border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      display:grid;grid-template-columns: 240px 1fr;gap:30px;align-items:center;
     }
-    header h1 {
-      font-size: 42px;
+    .avatar{
+      width:220px;height:220px;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);
+      transform:translateY(0);transition:transform .6s cubic-bezier(.2,.9,.3,1);
     }
-    header p {
-      font-size: 20px;
-      margin-top: 10px;
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero:hover .avatar{transform:translateY(-6px)}
+    .hero .info h2{margin:0;font-size:26px}
+    .hero .info p.title{margin:6px 0 12px;color:var(--muted);font-weight:600}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .badge{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px;color:var(--muted)}
+    .hero .cta{margin-top:18px;display:flex;gap:12px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;
+      background:var(--accent);color:white;border:none;cursor:pointer;box-shadow:0 8px 20px rgba(2,6,23,0.4);
     }
-    section {
-      max-width: 1000px;
-      margin: 80px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);font-weight:600}
+    .btn.ghost{background:transparent;color:var(--muted);border-radius:8px;padding:8px 10px}
+
+    /* Layout sections */
+    .wrap{max-width:1100px;margin:30px auto;display:grid;grid-template-columns:2fr 1fr;gap:28px;padding:0 20px;}
+    .card{background:var(--card);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    h3{margin-top:0;color:var(--white)}
+    .muted{color:var(--muted);font-weight:600}
+
+    /* left column */
+    .left .section{margin-bottom:18px;animation:fadeUp .6s ease both}
+    .summary p{color:var(--muted);line-height:1.7}
+    .timeline{display:flex;flex-direction:column;gap:14px}
+    .job{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(255,255,255,0.01))}
+    .job h4{margin:0}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;font-weight:600;color:var(--muted)}
+
+    /* right column */
+    .right .contact-list{display:flex;flex-direction:column;gap:10px}
+    .contact-list a{color:var(--white);text-decoration:none;font-weight:700}
+    .download-cv{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:12px}
+
+    /* contact form */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:8px;color:var(--white)}
+    textarea{min-height:120px;resize:vertical}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* footer */
+    footer{max-width:1100px;margin:40px auto 80px;padding:20px;text-align:center;color:var(--muted)}
+
+    /* animations */
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(14px)}
+      to{opacity:1;transform:none}
     }
-    section h2 {
-      color: #4CAF50;
-      margin-bottom: 15px;
+    @media (max-width:920px){
+      .wrap{grid-template-columns:1fr; padding:0 14px}
+      .hero{grid-template-columns:140px 1fr}
+      .avatar{width:140px;height:140px;border-radius:12px}
+      .topbar{padding:10px 14px}
+      nav{display:none}
     }
-    .profile-pic {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .profile-pic img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    }
-    ul {
-      list-style: none;
-    }
-    ul li {
-      padding: 5px 0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #eee;
-      margin-top: 40px;
-    }
+
+    /* utility */
+    .right .card + .card{margin-top:16px}
+    .muted-2{color:rgba(255,255,255,0.7)}
+    .links a{display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);margin-right:8px;text-decoration:none;color:var(--white)}
   </style>
 </head>
-<body>
+<body data-theme="dark">
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header>
-    <h1>Mayank Pandey</h1>
-    <p>Monitoring & Evaluation Professional | State Project Coordinator</p>
-  </header>
-
-  <section id="about">
-    <div class="profile-pic">
-      <img src="Mayank Photo.jpg" alt="Mayank Pandey">
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">MP</div>
+      <div>
+        <h1 style="font-size:15px;margin:0">Mayank Pandey</h1>
+        <div style="font-size:12px;color:var(--muted)">Monitoring & Evaluation • State Project Coordinator</div>
+      </div>
     </div>
-    <h2>About Me</h2>
-    <p>Monitoring & Evaluation (M&E) professional with 9+ years of experience in public health and development programs. Skilled in program monitoring, data analysis, government liaison, and capacity building. Passionate about driving impact through evidence-based decision-making and systems strengthening.</p>
-  </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Program MIS Design & Implementation</li>
-      <li>Data Management & Analysis</li>
-      <li>Government Liaison & Capacity Building</li>
-      <li>Public Health Program Implementation</li>
-      <li>Team Leadership & Field Supervision</li>
-      <li>Effective Communication & Reporting</li>
-    </ul>
-  </section>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p><strong>State Program Coordinator – Monitoring, Evaluation & Documentation</strong><br>
-      Evidence Action (2022 – Present)<br>
-      Led MLE for statewide IFA & NDD programs in partnership with government, ensuring evidence-based implementation, training, reporting, and cross-sectoral coordination.</p>
+    <div class="actions">
+      <button id="themeToggle" class="btn ghost" title="Toggle theme">Toggle</button>
+      <a class="btn secondary" href="#contact">Hire Me</a>
+    </div>
+  </div>
 
-    <p><strong>District Project Assistant – M&E</strong><br>
-      Aga Khan Foundation (2021 – 2022)</p>
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="avatar" role="img" aria-label="Mayank Pandey photo">
+        <img src="Mayank Photo.jpg" alt="Mayank Pandey">
+      </div>
+      <div class="info">
+        <h2 id="hero-heading">Mayank Pandey</h2>
+        <div class="title">Monitoring & Evaluation Professional • State Project Coordinator</div>
+        <div class="badges" style="margin-top:10px">
+          <div class="badge">9+ years experience</div>
+          <div class="badge">Program MIS & M&E</div>
+          <div class="badge">Government Liaison</div>
+        </div>
 
-    <p><strong>District Strategist / Block Coordinator / MIS Coordinator</strong><br>
-      Child in Need Institute (2018 – 2020)</p>
+        <div class="cta">
+          <a class="btn" href="Mayank_Pandey_CV.docx" download>Download CV</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+        </div>
 
-    <p><strong>MIS Executive</strong><br>
-      Aga Khan Rural Support Programme (2016 – 2018)</p>
-  </section>
+        <p class="muted" style="margin-top:14px;max-width:680px">
+          Monitoring & Evaluation (M&E) professional with a strong track record designing and implementing data-driven systems for large-scale public health programs. I enable government partnerships, strengthen MIS, and turn data into action.
+        </p>
+      </div>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li>Master of Social Work – IGNOU, 2022</li>
-      <li>PG Diploma in Rural Development – IGNOU, 2017</li>
-      <li>PG Diploma in Computer Application – Bilaspur University, 2016</li>
-      <li>Bachelor of Arts – Bilaspur University, 2015</li>
-    </ul>
-  </section>
+    <div class="wrap">
+      <div class="left">
+        <div class="card section" id="about">
+          <h3>Professional Summary</h3>
+          <div class="summary">
+            <p>Monitoring & Evaluation (M&E) professional with over 9 years of experience designing and implementing data-driven systems for large-scale public health and development programs. Proven ability to drive strategic improvements through evidence-based insights, cross-sectoral collaboration, and strong field engagement.</p>
+          </div>
+        </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:mayankpandey07752@gmail.com">mayankpandey07752@gmail.com</a></p>
-    <p>Phone: 8109428029</p>
-    <p>LinkedIn: <a href="#">(Add your LinkedIn link)</a></p>
-  </section>
+        <div class="card section" id="experience">
+          <h3>Experience</h3>
+          <div class="timeline">
+            <div class="job">
+              <h4>State Program Coordinator — Evidence Action</h4>
+              <div class="muted small">June 2022 — Present (Jaipur / Lucknow)</div>
+              <p class="muted-2">Led MLE efforts for statewide IFA & NDD programs, strengthened monitoring & reporting, supported capacity building and government collaboration.</p>
+            </div>
 
-  <footer>
-    <p>© 2025 Mayank Pandey | Designed for personal profile</p>
-  </footer>
+            <div class="job">
+              <h4>District Project Assistant — Aga Khan Foundation</h4>
+              <div class="muted small">May 2021 — June 2022 (Delhi)</div>
+              <p class="muted-2">Strengthened monitoring of early childhood programs, developed MIS, supported field supervision and training.</p>
+            </div>
 
+            <div class="job">
+              <h4>District Strategist / MIS Coordinator — CINI</h4>
+              <div class="muted small">July 2018 — Nov 2020 (Jharkhand)</div>
+              <p class="muted-2">Led program implementation, advocacy and training; supported RKSK and ECCE initiatives.</p>
+            </div>
+
+            <div class="job">
+              <h4>MIS Executive — AKRSPI</h4>
+              <div class="muted small">July 2016 — July 2018 (Muzaffarpur)</div>
+              <p class="muted-2">Designed and managed MIS systems for block-level program monitoring and reporting.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card section" id="skills">
+          <h3>Skills & Tools</h3>
+          <div class="skills" style="margin-top:12px">
+            <span class="skill">Program MIS Design</span>
+            <span class="skill">Data Analysis & Visualization</span>
+            <span class="skill">Government Liaison</span>
+            <span class="skill">Capacity Building</span>
+            <span class="skill">Monitoring & Field Supervision</span>
+            <span class="skill">Reporting & Documentation</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right">
+        <div class="card">
+          <h3>Contact</h3>
+          <div class="contact-list">
+            <div class="muted small">Email</div>
+            <a href="mailto:mayankpandey07752@gmail.com">mayankpandey07752@gmail.com</a>
+
+            <div style="height:10px"></div>
+            <div class="muted small">Phone</div>
+            <a href="tel:+918109428029">+91 81094 28029</a>
+
+            <div style="height:10px"></div>
+            <div class="muted small">Location</div>
+            <div class="muted-2">Jaipur, Rajasthan / Mirzapur, Uttar Pradesh</div>
+
+            <div style="height:14px"></div>
+            <div class="download-cv">
+              <a class="links" href="Mayank_Pandey_CV.docx" download>Download CV</a>
+              <a class="links" href="#" onclick="window.print();return false;">Print</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Get in touch</h3>
+          <form action="https://formsubmit.co/mayankpandey07752@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New contact from website — Mayank Profile">
+            <input type="hidden" name="_captcha" value="false">
+            <input name="name" type="text" placeholder="Your name" required>
+            <input name="email" type="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Write a short message (why you're contacting)" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+            <div class="small" style="margin-top:6px">Messages will be forwarded to your email via FormSubmit (no server required).</div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>References</h3>
+          <div class="muted small">Dr. Molshree Rathore</div>
+          <div class="muted-2">State Program Manager, Rajasthan — molshree.rathore@gmail.com</div>
+          <div style="height:8px"></div>
+          <div class="muted small">Mr. Sanjay Kumar</div>
+          <div class="muted-2">Project Coordinator, Aga Khan Foundation — sanjaysonu23@gmail.com</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>© 2025 Mayank Pandey • Built with focus on clarity, trust & impact</p>
+    </footer>
+  </main>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    function setTheme(t){
+      if(t==='light'){ body.setAttribute('data-theme','light'); localStorage.theme='light'; }
+      else{ body.setAttribute('data-theme','dark'); localStorage.theme='dark'; }
+    }
+    const saved = localStorage.theme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark');
+    setTheme(saved);
+    toggle.addEventListener('click', ()=> setTheme(body.getAttribute('data-theme')==='dark'?'light':'dark'));
+
+    const sections = document.querySelectorAll('.section, .hero, .card');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.style.opacity=1, e.target.style.transform='none';
+      });
+    }, {threshold:0.12});
+    sections.forEach(s=>{
+      s.style.opacity=0;
+      s.style.transform='translateY(16px)';
+      io.observe(s);
+    });
+  </script>
 </body>
 </html>
